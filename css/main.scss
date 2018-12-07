@@ -1,0 +1,1057 @@
+/*** RESET CSS ***/
+
+body {
+  margin:0;
+  padding:0;
+}
+
+/**** FONT *****/
+
+@font-face {
+  font-family: "VCR";
+  src: url("../fonts/vcr.woff") format("woff");
+}
+
+@font-face {
+  font-family: "RobotoCondensed";
+  src: url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family : "DecathlonCube_dp";
+  src : url("../fonts/ms-icons-regular.ttf") format("truetype");
+}
+
+
+
+/****** ANIMATION *****/
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/*****************************************
+CSS GENERIQUE
+******************************************/
+
+#dp_background {
+  width: 100%;
+  background-image: url(../img/page_background.jpg);
+  position: absolute;
+  top: 0px;
+  background-size: contain;
+  z-index: -999;
+}
+
+#dp_background:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom, white, white 10%, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0));
+}
+
+// IPAD
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  #dp_background:before {
+    background-image: linear-gradient(to bottom, white, white 10%, rgba(255, 255, 255, 0) 35%, rgba(255, 255, 255, 0)) !important;
+
+  }
+}
+// Big screen
+@media (min-width: 1550px) {
+  #dp_background {
+    background-size: cover;
+  }
+
+  #dp_background:before {
+    background-image: linear-gradient(to bottom, white, white 10%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0)) !important;
+
+  }
+
+}
+
+// Mobile
+@media only screen and (max-width : 767px) {
+  #dp_background {
+    background-size: cover;
+  }
+
+  #dp_background:before {
+    background-image: linear-gradient(to bottom, white, white 10%,rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0)) !important;
+  }
+
+}
+
+
+.dp {
+
+  overflow:hidden;
+  background-size: contain;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, h4, h5, h6, p {
+    color : #434244;
+    border : none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  h3 {
+    font-size:1.6em;
+  }
+
+
+
+  h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+  }
+
+
+  a {
+    text-decoration: none;
+  }
+  .row {
+    margin-right:0 !important;
+    margin-left:0 !important;
+    padding-left: 5%;
+    padding-right: 5%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+
+  img {
+    max-width:100%;
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  .container {
+    max-width:1000px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+  }
+
+  a {
+    padding: .78571429em 3.5em .78571429em 2.5em;
+    font-size: 14px;
+    line-height: 1.28571429;
+    background-color: #ffea28;
+    color: #333333;
+    border-radius: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: Roboto-Condensed,Arial,Helvetica,sans-serif;
+    position:relative;
+    overflow:hidden;
+    cursor:pointer;
+    -webkit-transition: background-color .45s ease .09s;
+    -o-transition: background-color .45s ease .09s;
+    transition: background-color .45s ease .09s;
+    z-index: 1;
+  }
+
+
+
+  a:before {
+    font-family: "DecathlonCube";
+    right: 0;
+    height: 0px;
+    font-size: 18px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-weight: 400;
+    line-height: 1.28571429em;
+    z-index: 1;
+    top: 0;
+    font-size: 18px;
+    content: "\E007";
+    height: 100%;
+    width: 2.2em;
+  }
+  a.secondary:before {
+    font-size:12px;
+    margin-top : 1px;
+  }
+
+  a:after {
+    background-color: #fdd835;
+    content: '';
+    position: absolute;
+    height: 150%;
+    width: 150%;
+    -webkit-transition: -webkit-transform .18s ease;
+    transition: -webkit-transform .18s ease;
+    -o-transition: transform .18s ease;
+    transition: transform .18s ease;
+    transition: transform .18s ease,-webkit-transform .18s ease;
+    -webkit-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+    top: 100%;
+    left: -25%;
+    z-index: -1;
+    -webkit-transform-origin: -webkit-calc(83.33333333333334% - 2.857142857142857em) 0;
+    -ms-transform-origin: calc(83.33333333333334% - 2.857142857142857em) 0;
+    transform-origin: calc(83.33333333333334% - 2.857142857142857em) 0;
+  }
+
+  a:hover:after {
+    -webkit-transform: rotate(0) translateY(-100%);
+    -ms-transform: rotate(0) translateY(-100%);
+    transform: rotate(0) translateY(-100%);
+    -webkit-transition: -webkit-transform .36s ease;
+    transition: -webkit-transform .36s ease;
+    -o-transition: transform .36s ease;
+    transition: transform .36s ease;
+    transition: transform .36s ease,-webkit-transform .36s ease;
+  }
+
+
+
+  .product-cta {
+    display:flex;
+    justify-content:center;
+  }
+
+
+  h2 {
+    font-size : 4em;
+    font-family : 'RobotoCondensed';
+    font-weight:700;
+    font-style:italic;
+    margin-bottom:40px;
+  }
+
+  h2 span {
+
+    font-family : "RobotoCondensed";
+    font-style: italic;
+    font-weight:400;
+  }
+
+  h3 {
+    text-transform : uppercase;
+    font-family : 'RobotoCondensed';
+    font-weight:700;
+    font-style:italic;
+  }
+
+  h4 {
+    margin-bottom:20px;
+    margin-top:5px;
+    text-transform : uppercase;
+    font-family : 'RobotoCondensed';
+    font-weight:700;
+    font-style:italic;
+    font-size:28px;
+  }
+
+  p {
+    font-family : "RobotoCondensed";
+    font-style: italic;
+    margin-bottom:30px;
+    font-size:16px;
+    line-height:20px;
+  }
+
+
+  /***** GRID & RESPONSIVE ******/
+
+
+  .col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+
+  .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col,
+  .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm,
+  .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md,
+  .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg,
+  .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
+  .col-xl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+
+  @media (min-width: 768px) {
+    .col-md {
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+    .col-md-auto {
+      -ms-flex: 0 0 auto;
+      flex: 0 0 auto;
+      width: auto;
+      max-width: none;
+    }
+    .col-md-1 {
+      -ms-flex: 0 0 8.333333%;
+      flex: 0 0 8.333333%;
+      max-width: 8.333333%;
+    }
+    .col-md-2 {
+      -ms-flex: 0 0 16.666667%;
+      flex: 0 0 16.666667%;
+      max-width: 16.666667%;
+    }
+    .col-md-3 {
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    .col-md-4 {
+      -ms-flex: 0 0 33.333333%;
+      flex: 0 0 33.333333%;
+      max-width: 33.333333%;
+    }
+    .col-md-5 {
+      -ms-flex: 0 0 41.666667%;
+      flex: 0 0 41.666667%;
+      max-width: 41.666667%;
+    }
+    .col-md-6 {
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+    .col-md-7 {
+      -ms-flex: 0 0 58.333333%;
+      flex: 0 0 58.333333%;
+      max-width: 58.333333%;
+    }
+    .col-md-8 {
+      -ms-flex: 0 0 66.666667%;
+      flex: 0 0 66.666667%;
+      max-width: 66.666667%;
+    }
+    .col-md-9 {
+      -ms-flex: 0 0 75%;
+      flex: 0 0 75%;
+      max-width: 75%;
+    }
+    .col-md-10 {
+      -ms-flex: 0 0 83.333333%;
+      flex: 0 0 83.333333%;
+      max-width: 83.333333%;
+    }
+    .col-md-11 {
+      -ms-flex: 0 0 91.666667%;
+      flex: 0 0 91.666667%;
+      max-width: 91.666667%;
+    }
+    .col-md-12 {
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1000px;
+    }
+  }
+
+
+
+  /************************************
+  MAIN CSS
+  ************************************/
+
+
+  /***** JUMBOTRON *****/
+
+
+
+  .dp_jumbotron {
+    background-image: url('../img/home-background_desktop.jpg');
+    background-position: bottom;
+    background-size:cover;
+    background-repeat: no-repeat;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:0px;
+  }
+
+  // IPAD
+  @media only screen and (min-width : 768px) and (max-width : 1024px) {
+    .dp_jumbotron {
+      background-image: url('../img/home-background.jpg');
+      background-position: center;
+    }
+  }
+  // Big screen
+  @media (min-width: 1550px) {
+    .dp_jumbotron {
+      background-image: url('../img/home-background.jpg');
+    }
+  }
+
+  // Mobile
+  @media only screen and (max-width : 767px)  {
+    .dp_jumbotron {
+      background-image: url('../img/home-background_mobile2.jpg');
+    }
+
+  }
+
+  @media only screen and (max-height : 600px)  {
+    .dp_jumbotron {
+      background-image: url('../img/home-background_mobile-small.jpg');
+    }
+
+  }
+
+
+
+
+
+
+  .dp_container-jumbo {
+    display:flex;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    align-content:stretch;
+  }
+
+  .dp_jumbotron .dp_logo {
+    max-width:170px;
+  }
+
+  .dp_jumbotron h1 {
+    font-family : "VCR";
+    padding:20px;
+    background-color : black;
+    color:white;
+    margin-top:151.4px;
+    font-size:4rem;
+  }
+
+  .dp_jumbotron .container.dp_cta-btn a {
+    margin-top: -90px;
+  }
+
+  .dp_jumbotron .container.dp_cta-btn {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-right: 25%;
+    margin-top:30px;
+  }
+
+
+
+  /******* CRUSH 500 ********/
+
+  .dp_crush500 .row {
+    margin-bottom: 120px;
+  }
+
+  .dp_crush500 figure.crush500_2 img {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+  }
+
+  .dp_crush500 figure.crush500_3 img {
+    position: absolute;
+    top: -35%;
+    left: -40%;
+  }
+
+  #dp_motif-left::before {
+    background-image: url(../img/motif.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    content: " ";
+    position: absolute;
+    height: 50px;
+    top:25%;
+    width: 837px;
+    right: 20px;
+    z-index: -1;
+  }
+
+  #dp_motif-right::before {
+    background-image: url(../img/motif-reverse.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    content: " ";
+    position: absolute;
+    bottom: 50%;
+    height: 50px;
+    width: 837px;
+    left: -55px;
+    z-index: -1;
+  }
+
+
+  // p.dp_description {
+  //   max-width:320px;
+  // }
+
+  .dp_scroll {
+    text-align : center;
+    padding-right:25%;
+  }
+  .dp_scroll p {
+    margin-top:-5px;
+    color : #434244;
+  }
+  .dp_scroll i {
+    color : #994c44;
+    font-size:20px;
+  }
+
+  .dp_link-row {
+    display:flex;
+    justify-content:center;
+    text-align: center;
+    opacity:0;
+  }
+
+
+  /******* CONCEPTION  ********/
+
+  .vertical-img img {
+    height:100%;
+    width:100%;
+  }
+  @media (min-width: 767.98px) {
+    .vertical-img {
+      margin-top:12.5%;
+      z-index:1;
+    }
+
+    .vertical-img figure {
+      display:flex;
+    }
+
+    .conception-img {
+      display:flex;
+      flex-direction: column;
+    }
+
+    .conception-img img {
+      max-width: 150%;
+      float: right;
+      z-index: -1;
+    }
+
+    .conception-img h3 {
+      margin: -60px 0px 0px -30px;
+      width: 75%;
+      padding: 10px 5px 10px 30px !important;
+      background-color: white;
+      font-size: 1.7rem;
+    }
+
+    .conception-img p {
+      max-width:80%;
+    }
+
+  }
+
+  .conception-img::before {
+    background-image: url(../img/motif-reverse.png);
+    background-repeat: no-repeat;
+    background-position: left;
+    content : " ";
+    position: absolute;
+    bottom:17%;
+    height: 50px;
+    width: 837px;
+    right: -150%;
+    z-index: 3;
+  }
+
+
+  /******* VIDEO  ********/
+
+  .dp_video h2 {
+    text-align:right;
+  }
+
+  .video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+  }
+  .video figure {
+    overflow: hidden;
+    position: absolute;
+    z-index: 3;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .video figure img {
+    height: 100%;
+    width: auto;
+    max-width: 120%;
+  }
+
+  .video figure .fas {
+    color: white;
+    font-size: 135px;
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    z-index:10
+
+  }
+
+  .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /******* PARALLAX  ********/
+
+
+  .parallax {
+    max-width:100%;
+    /* The image used */
+    background-image: url("../img/parralax-background.jpg");
+
+    /* Set a specific height */
+    height: 400px;
+    margin-top:120px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  /*********** LA GAMME ******************/
+
+  .crush500 a {
+    padding: 10px 25px 10px 15px;
+    background-color: #ffea28;
+    color: #333333;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: "RobotoCondensed", sans-serif;
+    position: relative;
+    font-size: 12px;
+  }
+
+  .crush500 .product-price {
+    text-align:center;
+    margin-bottom: 40px;
+  }
+
+  .crush500 .product-price span {
+    text-align:center;
+    font-family: "RobotoCondensed", sans-serif;
+    font-weight:700;
+    font-size:38px;
+    padding : 6px 30px 10px;
+    background-color : #ffea28;
+  }
+
+  .products {
+    display:flex;
+  }
+
+  @media (min-width:980px) {
+
+    .products img {
+      max-width:170%;
+    }
+    .products #ad_black {
+      z-index:5;
+    }
+    .products #ad_kaki {
+      z-index:4;
+    }
+
+    .products #jr_black {
+      z-index:3;
+    }
+    .products #jr_kaki {
+      z-index:2;
+    }
+    .products .even img {
+      margin-left:-30%;
+    }
+
+    .crush500 .single-product .product-cta {
+      text-align:right;
+    }
+
+
+    /**** END DESKTOP ****/
+  }
+
+  .single-product {
+    margin-bottom:40px;
+  }
+
+  .single-product.even .product-label {
+    position:absolute;
+    right:0px;
+    top:15%;
+  }
+
+  .single-product.odd .product-label {
+    position:absolute;
+    left:0px;
+    top:5%;
+  }
+
+  .single-product figure {
+    margin-top:52px;
+  }
+  .single-product.odd .product-label span {
+    text-align:left;
+  }
+
+  .single-product.even .product-label span {
+    text-align:right;
+  }
+
+  .single-product .product-label span {
+    font-family: "RobotoCondensed", sans-serif;
+    text-transform:uppercase;
+    font-weight:700;
+    display:block;
+    font-size:20px;
+  }
+
+  .single-product .product-label span.product-description {
+    font-family : "RobotoCondensed";
+    font-weight:400;
+    font-style: italic;
+  }
+  .single-product .product-cta {
+    text-align:center;
+  }
+  .dp_gamme figure {
+    margin-bottom: 25px;
+  }
+
+
+  /****************************************
+  MOBILE CSS
+  *****************************************/
+
+
+  @media (max-width: 767.98px) {
+
+    /**** GENERIQUE ****/
+    h2 {
+      font-size:40px;
+    }
+
+    a {
+      font-size:11px;
+    }
+
+    a:before {
+      font-size:1em;
+      margin-top:1px;
+    }
+
+    p br {
+      display:none;
+    }
+
+    /****** JUMBOTRON ******/
+
+    .dp_container-jumbo {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+      align-content: stretch;
+      flex-direction: column;
+      margin-top: 25%;
+    }
+
+    .dp_jumbotron h1 {
+      margin-top:0px;
+      font-size:4rem;
+    }
+
+
+    /******** CRUSH500 RESPONSIVE *************/
+
+    #dp_motif-right::before {
+      left: 15px;
+    }
+
+    .dp_link-row {
+      text-align:left;
+    }
+
+    /******* CONCEPTION RESPONSIVE ********/
+
+    .conception-img::before {
+      right: 0;
+      bottom: 30%;
+      z-index: -3;
+    }
+
+    /************ PARALLAX RESPONSIVE ******/
+
+    .parallax {
+      background-image: url("../img/parralax-background_mobile.jpg");
+    }
+
+    /*********** VIDEO RESPONSIVE *******/
+    .dp_video h2 {
+      text-align:left;
+    }
+
+    .video figure .fas {
+      font-size: 55px;
+      left: 45%;
+      top: 35%;
+    }
+
+    /************* LA GAMME RESPONSIVE  ****************/
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 75px;
+    }
+
+
+
+
+  }
+
+
+
+  /****************************************
+  IPAD
+  *****************************************/
+
+  @media only screen and (min-width : 768px) and (max-width : 1024px) {
+
+
+    /********** CRUSH 500 ************/
+
+    #dp_motif-right::before {
+      left: 0;
+    }
+    /****** CONCEPTION ******/
+
+    .conception-img h3 {
+      width: 100%;
+
+    }
+
+    .conception-img::before {
+      position: absolute;
+      bottom: -30px;
+      width: 837px;
+      height: 50px;
+      z-index: -1;
+    }
+    /******* LA GAMME ******/
+
+    .single-product .product-label span {
+      font-size: 15px;
+    }
+
+    .crush500 a {
+      font-size: 8px;
+    }
+
+    .products img {
+      max-width:170%;
+    }
+    .products #ad_black {
+      z-index:5;
+    }
+    .products #ad_kaki {
+      z-index:4;
+    }
+
+    .products #jr_black {
+      z-index:3;
+    }
+    .products #jr_kaki {
+      z-index:2;
+    }
+    .products .even img {
+      margin-left:-30%;
+    }
+
+    .crush500 .single-product .product-cta {
+      text-align:right;
+    }
+
+
+  }
+
+  /****************************************
+  BIG SCREEN
+  *****************************************/
+
+  @media (min-width: 1550px) {
+
+    .dp_jumbotron .container.dp_cta-btn {
+      padding-right: 15%;
+    }
+
+  }
+
+
+
+
+  /******* ANIMATION JQUERY ************/
+
+  #dp_motif-right, .crush500-text_2, .crush500_2, .crush500_3  {
+    display : none;
+  }
+
+
+
+  /***** MOBILE // Animation Jquery *****/
+  @media (max-width: 767.98px) {
+
+    .motif-right {
+      margin-top:500px;
+    }
+
+    .dp_crush500 .row {
+      flex-direction: column-reverse;
+    }
+
+    .dp_crush500 figure.crush500_2 img {
+      position: absolute;
+      top: 85%;
+      left:0;
+    }
+
+    .dp_crush500 figure.crush500_3 img {
+      position: absolute;
+      top: -80%;
+      left:0;
+    }
+
+    .dp_link-row.desktop {
+      opacity:0 !important;
+    }
+
+    .dp_link-row.mobile {
+      padding-left:0px !important;
+    }
+
+
+  }
+
+  @media (min-width : 768px) {
+    .dp_link-row.mobile {
+      opacity:0 !important;
+    }
+  }
+
+
+}
