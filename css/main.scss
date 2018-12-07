@@ -723,6 +723,12 @@ CSS GENERIQUE
     background-size: cover;
   }
 
+  @media (min-width:980px) {
+    .parallax {
+       background-attachment: fixed;
+    }
+  }
+
 
   /*********** LA GAMME ******************/
 

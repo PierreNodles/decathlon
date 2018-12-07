@@ -1,4 +1,4 @@
-(function(){
+$(document).ready(function(){
 
 
   //functions
@@ -261,4 +261,4 @@
 
 
   // END JQUERY
-})(jQuery);
+});
