@@ -224,7 +224,7 @@ CSS GENERIQUE
     -ms-flex-align: center;
     align-items: center;
     font-weight: 400;
-    line-height: 1.28571429em;
+    line-height: 1;
     z-index: 1;
     top: 0;
     font-size: 18px;
@@ -234,7 +234,6 @@ CSS GENERIQUE
   }
   a.secondary:before {
     font-size:12px;
-    margin-top : 1px;
   }
 
   a:after {
